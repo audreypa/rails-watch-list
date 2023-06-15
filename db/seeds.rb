@@ -6,17 +6,17 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Movie.destroy_all
-url = 'http://tmdb.lewagon.com/movie/top_rated?api_key=<your_api_key>'
-movies = JSON.parse(URI.open(url).read)['results']
-movies.each do |movie|
-  Movie.create!(
-    title: movie['title'],
-    overview: movie['overview'],
-    poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
-    rating: movie['vote_average']
-  )
-end
+# Movie.destroy_all
+# url = 'http://tmdb.lewagon.com/movie/top_rated?api_key=<your_api_key>'
+# movies = JSON.parse(URI.open(url).read)['results']
+# movies.each do |movie|
+#   Movie.create!(
+#     title: movie['title'],
+#     overview: movie['overview'],
+#     poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
+#     rating: movie['vote_average']
+#   )
+# end
 
 Bookmark.destroy_all
 List.destroy_all
@@ -26,3 +26,13 @@ List.destroy_all
     name: Faker::Book.title
   )
 end
+
+# List.all.each do |list|
+#   3.times do
+#     Bookmark.create!(
+#       comment: Faker::Quote.famous_last_words,
+#       movie: Movie.all.sample,
+#       list: list.id
+#     )
+#   end
+# end

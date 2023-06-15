@@ -1,13 +1,11 @@
 <h1><%= @list.name %></h1>
 <%= link_to "Rename", list_path(@list) %>
-<% unless @list.bookmarks.empty? %>
-  <%= @list.bookmarks.each do |bookmark|  %>
+  <% @list.bookmarks.each do |bookmark|  %>
     <%= bookmark.comment %>
     <%= bookmark.movie.title %>
     <%= bookmark.movie.overview %>
     <%= bookmark.movie.poster_url %>
     <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Sure my friend ? 🤔"} %>
-  <% end %>
 <% end %>
 
 <%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>

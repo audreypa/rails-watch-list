@@ -17,7 +17,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    if @list.save!
+    if @list.save
       redirect_to list_path(@list), notice: 'Your list was created ! 👏'
     else
       render :new, status: :unprocessable_entity
@@ -25,7 +25,7 @@ class ListsController < ApplicationController
   end
 
   def update
-    if @list.update!(list_params)
+    if @list.update(list_params)
       redirect_to list_path(@list), notice: 'Your list was updated ! 👏'
     else
       render :edit, status: :unprocessable_entity
@@ -40,13 +40,5 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name)
-  end
-
-  def set_bookmark
-    @bookmark = Bookmark.find(params[:id])
-  end
-
-  def bookmark_params
-    params.require(:bookmark).permit(:comment)
   end
 end
