@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   end
   resources :bookmarks, only: :destroy
   # Defines the root path route ("/")
-  root to: 'lists#home'
+  root to: '/home'
 end

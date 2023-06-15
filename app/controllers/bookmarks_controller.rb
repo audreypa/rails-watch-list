@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   before_action :set_list
-  before_action :set_bookmark, only: [:show, :edit, :update, :destroy]
+  before_action :set_bookmark, only: [:destroy]
 
   def new
     @bookmark = @list.bookmarks.new
@@ -15,20 +15,9 @@ class BookmarksController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-    if @bookmark.update(bookmark_params)
-      redirect_to list_path(@list), notice: 'Your bookmark was updated! 👏'
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
   def destroy
     @bookmark.destroy
-    redirect_to list_path(@list), status: :see_other
+    redirect_to lists_path, status: :see_other
   end
 
   private
