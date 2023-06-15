@@ -1,2 +1,5 @@
-<h1>Bookmarks#show</h1>
-<p>Find me in app/views/bookmarks/show.html.erb</p>
+<h1>Bookmarks for <%= @bookmark.movie %></h1>
+
+<p><%= @bookmark.comment %></p>
+<%= link_to "Edit", edit_bookmark_path(@bookmark) %>
+<%= link_to "Back to list", list_path(@list) %>

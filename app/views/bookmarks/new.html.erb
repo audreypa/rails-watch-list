@@ -1,2 +1,5 @@
-<h1>Bookmarks#new</h1>
-<p>Find me in app/views/bookmarks/new.html.erb</p>
+<h1>New Bookmark</h1>
+<br>
+<%= render 'form', bookmark: @bookmark %>
+<br>
+<%= link_to "Back to list", list_path(@list) %>

@@ -1,0 +1,4 @@
+<%= simple_form_for([@list, bookmark]) do |f| %>
+  <%= f.association :movie, collection: Movie.all , label_method: :title, value_method: :id %>
+  <%= f.input :comment %>
+<% end %>

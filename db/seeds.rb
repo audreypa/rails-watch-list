@@ -17,3 +17,12 @@ movies.each do |movie|
     rating: movie['vote_average']
   )
 end
+
+Bookmark.destroy_all
+List.destroy_all
+
+3.times do
+  List.create!(
+    name: Faker::Book.title
+  )
+end
