@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@import "font-awesome";
+
+@import "components/_buttons.scss";
+@import "components/_cards.scss";
