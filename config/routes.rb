@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :lists, except: %i[destroy] do
-    resources :bookmarks do
-      member do
-        put 'like', to: 'posts#upvote'
-        put 'dislike', to: 'posts#downvote'
-      end
-      resources :reviews, only: %i[new create]
-    end
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "lists#index"
+  resources :lists, except: [:edit, :update] do
+    resources :bookmarks, only: [:new, :create]
+    resources :reviews, only: :create
   end
   resources :bookmarks, only: :destroy
-  # Defines the root path route ("/")
-  root to: '/home'
+  resources :reviews, only: :destroy
 end

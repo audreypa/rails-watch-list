@@ -26,13 +26,3 @@ List.destroy_all
     name: Faker::Book.title
   )
 end
-
-# List.all.each do |list|
-#   3.times do
-#     Bookmark.create!(
-#       comment: Faker::Quote.famous_last_words,
-#       movie: Movie.all.sample,
-#       list: list.id
-#     )
-#   end
-# end
