@@ -13,16 +13,16 @@
       </div>
   </div>
     <button class="btn-delete">
-      <%= link_to "Delete", bookmark_path(bookmark), class:"btn-bookmark", data: {turbo_method: :delete, turbo_confirm: "Sure my friend ? 🤔"} %>
+      <%= link_to "Delete", bookmark_path(bookmark), class:"text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Sure my friend ? 🤔"} %>
     </button>
     <% end %>
 </div>
 
 <div class="container-button-list">
   <button type="button" class="btn">
-    <%= link_to "Add a bookmark", new_list_bookmark_path(@list), class:"btn-bookmark" %>
+    <%= link_to "Add a bookmark", new_list_bookmark_path(@list), class:"text-decoration-none" %>
   </button>
   <button type="button" class="btn">
-    <%= link_to "Back to list", lists_path, class:"btn-bookmark" %>
+    <%= link_to "Back to list", lists_path, class:"text-decoration-none" %>
   </button>
 </div>

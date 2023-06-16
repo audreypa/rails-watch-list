@@ -1,23 +1,19 @@
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
   <div class="text-center text-white">
-    <h1>Save any kind of movies</h1>
+    <h1 class="mb-3">Welcome to RailsWatchList</h1>
     <h3 class="typed-js" data-controller="typed-js"></h3>
   </div>
 </div>
-<div class="container py-5">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">My Lists</h3>
-    <%= link_to "Create a new list", new_list_path, class: "btn btn-flat" %>
-  </div>
-  <div class="row">
+  <button type="button" class="btn">
+    <%= link_to "Create a new list", new_list_path, class: "btn-bookmark" %>
+  </button>
+  <div class="container">
     <% @lists.each do |list| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
+      <div class="container-list">
         <%= link_to list_path(list), class:"text-decoration-none" do %>
             <%#  image %>
             <%= list.name %>
-
         <% end %>
-      </div>
     <% end %>
-  </div>
+    </div>
 </div>

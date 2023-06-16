@@ -12,7 +12,7 @@
   align-items: center;
   box-shadow: 0px 0px 15px hsl(233, 26%, 24%);
 }
-.container-bookmark {
+.container-bookmark, .container-list {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
