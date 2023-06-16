@@ -1,8 +1,8 @@
 @import "bootstrap";
 @import "font-awesome";
 
-@import "components/_buttons";
-@import "components/_cards";
+@import "./components/buttons";
+@import "./components/cards";
 
 body {
   background-color: hsl(235, 18%, 26%);
